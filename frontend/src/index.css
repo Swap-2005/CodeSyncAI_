@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes proficiency-bar-in {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-proficiency-bar {
+  animation: proficiency-bar-in 0.3s ease-out forwards;
+}
+
+:root {
+  /* Light theme variables */
+  --background-primary: #ffffff;
+  --background-secondary: #f5f7fa;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a5568;
+  --border-color: #e2e8f0;
+  --accent-color: #3182ce;
+  --success-color: #48bb78;
+  --warning-color: #ed8936;
+  --error-color: #e53e3e;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --background-primary: #1a202c;
+  --background-secondary: #2d3748;
+  --text-primary: #f7fafc;
+  --text-secondary: #a0aec0;
+  --border-color: #4a5568;
+  --accent-color: #63b3ed;
+  --success-color: #68d391;
+  --warning-color: #f6ad55;
+  --error-color: #fc8181;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Apply theme transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Calendar Custom Styles */
+.calendar-custom {
+  width: 350px !important;
+  max-width: 100% !important;
+  padding: 16px !important;
+  background: white !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  margin: 0 auto !important;
+}
+
+/* Navigation styles */
+.react-calendar__navigation {
+  display: flex !important;
+  align-items: center !important;
+  margin-bottom: 16px !important;
+}
+
+.react-calendar__navigation button {
+  min-width: 44px !important;
+  background: none !important;
+  border: none !important;
+  padding: 8px !important;
+  cursor: pointer !important;
+}
+
+.react-calendar__navigation button:disabled {
+  opacity: 0.3 !important;
+  cursor: not-allowed !important;
+}
+
+.react-calendar__navigation button:enabled:hover {
+  background-color: #f3f4f6 !important;
+  border-radius: 8px !important;
+}
+
+.react-calendar__navigation__label {
+  font-weight: bold !important;
+  font-size: 1rem !important;
+  color: #1a202c !important;
+  pointer-events: none !important;
+  flex-grow: 1 !important;
+  text-align: center !important;
+}
+
+/* Month view styles */
+.calendar-custom .react-calendar__month-view__weekdays {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+  font-size: 0.75rem !important;
+  color: #4a5568 !important;
+  margin-bottom: 8px !important;
+}
+
+.calendar-custom .react-calendar__month-view__weekdays__weekday {
+  padding: 4px !important;
+  text-align: center !important;
+}
+
+.calendar-custom .react-calendar__month-view__days {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+  grid-auto-rows: 1fr !important;
+  gap: 1px !important;
+}
+
+.calendar-custom .react-calendar__month-view__days > button {
+  height: 40px !important;
+  padding: 8px 0 !important;
+  margin: 0 !important;
+  background: none !important;
+  border: none !important;
+  outline: none !important;
+  font-size: 0.875rem !important;
+  color: #1a202c !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 8px !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.calendar-custom .react-calendar__tile:enabled:hover {
+  background-color: #e5e7eb !important;
+}
+
+.calendar-custom .react-calendar__tile--now {
+  background-color: #3b82f6 !important;
+  color: white !important;
+}
+
+.calendar-custom .react-calendar__tile--active {
+  background-color: #2563eb !important;
+  color: white !important;
+}
+
+.calendar-custom .react-calendar__tile:disabled {
+  color: #9ca3af !important;
+  cursor: not-allowed !important;
+  background-color: transparent !important;
+}
+
+.calendar-custom .react-calendar__month-view__days__day--neighboringMonth {
+  visibility: hidden !important;
+}
+
+/* Year and Month view */
+.react-calendar__year-view__months,
+.react-calendar__decade-view__years,
+.react-calendar__century-view__decades {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 8px !important;
+  padding: 8px !important;
+}
+
+.react-calendar__year-view .react-calendar__tile,
+.react-calendar__decade-view .react-calendar__tile,
+.react-calendar__century-view .react-calendar__tile {
+  padding: 1em 0.5em !important;
+  text-align: center !important;
+  border-radius: 8px !important;
+}
+
+.react-calendar__tile--hasActive,
+.react-calendar__tile--active {
+  background-color: #2563eb !important;
+  color: white !important;
+}
+
+.react-calendar__tile--now {
+  background-color: #3b82f6 !important;
+  color: white !important;
+}
+
+.react-calendar__tile:disabled {
+  color: #9ca3af !important;
+  cursor: not-allowed !important;
+  background-color: transparent !important;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  visibility: hidden !important;
+}
+
+/* Fix first date alignment */
+.react-calendar__month-view__days {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+  grid-auto-rows: 1fr !important;
+}
+
+.react-calendar__month-view__days > button {
+  margin: 0 !important;
+  padding: 8px !important;
+  width: 100% !important;
+}
+  

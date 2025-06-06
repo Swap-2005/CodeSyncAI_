@@ -1,0 +1,94 @@
+.analytics-dashboard {
+    min-height: 100vh;
+    background-color: var(--background-primary);
+    transition: all 0.3s ease;
+}
+
+.dashboard-card {
+    background: var(--card-background);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+.chart-container {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    height: 400px;
+}
+
+.chart-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.difficulty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.difficulty-item {
+    background: var(--card-background-secondary);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.difficulty-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-accent);
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    .dashboard-card {
+        background: var(--card-background-dark);
+    }
+
+    .chart-title {
+        color: var(--text-primary-dark);
+    }
+
+    .difficulty-item {
+        background: var(--card-background-secondary-dark);
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .stat-value {
+        font-size: 2rem;
+    }
+
+    .chart-container {
+        height: 300px;
+    }
+
+    .difficulty-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+} 
